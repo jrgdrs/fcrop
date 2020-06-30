@@ -26,18 +26,15 @@
 *
 */
 
-
-
 // config
 // const
 // location of imagemagick
-$im = "magick";
+$im = "magick"; // local path to imagemagick e.g. /usr/bin/magick
 $debug = 1; // show debug logs
 $info = 0; // show info log
-$EOL = "\n";
+$EOL = PHP_EOL;
 
 // commandline processing
-
 if( $argc != 5) die( "usage: fcrop <inputfile> <outputsize> <focalpoint> <outputfile> $EOL"
 . "  e.g. php fcrop.php input.jpg 320x480 0.4,0.5 output.png $EOL");
 
