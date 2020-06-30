@@ -22,7 +22,6 @@
 *    the original to the output image is too high, imagemagick needs longer processing
 *
 * version:     1.0
-* author:      fcrop@joerg-drees.de
 *
 */
 
