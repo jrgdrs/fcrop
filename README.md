@@ -3,7 +3,7 @@ image cropping with focalpoint consideration
 
 php commandline script uses imagemagick for cropping with focalpoint consideration
 
-![example with focal points](https://github.com/jrgdrs/fcrop/examples/nightwatch_measure.png)
+![example with focal points](https://github.com/jrgdrs/fcrop/blob/master/examples/nightwatch_measure.png?raw=true)
 
 z.B.
 
