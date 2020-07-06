@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+    
+    body { font-family: Sans-Serif; }
+    table { width:80%; }
+    td { background-color: #cccccc; }
+
+    div {
+    width: 400px; height: 400px;
+    overflow:hidden;
+    }
+    img.mx {
+    transform: matrix(0.8, 0, 0, 0.8, -334, -100 );
+    }
+    img.st {
+    transform: scale( 0.8, 0.8) translate( -418px, -125px );
+    }
+    img.ts {
+    transform: translate( -334px, -100px) scale( 0.8, 0.8 ); 
+    }
+
+    </style>
+</head>
+<body>
+	<p><img src="original.jpg" width="80%" /></p>
+	<p>Input Size: <br/>
+	magick identify -ping -format '%w %h' nightwatch.jpg <br/>
+	1500 x 1000 </p>
+	
+	<table>
+	<tr><td>Value</td><td>x/width</td><td>y/height</td></tr>
+	<tr><td>Input Size (px)</td><td>1500</td><td>1000</td></tr>
+	<tr><td>Output Size (px)</td><td>400</td><td>400</td></tr>
+	<tr><td>Focalpoint (factor)</td><td>0.32</td><td>0.25</td></tr>
+	<tr><td>Focalpoint Nearest (factor)</td><td>0.32</td><td>0.25</td></tr>
+	<tr><td>Scaling (factor)</td><td>0.416667</td><td>0.8</td></tr>
+	<tr><td>Scaling Max (factor)</td><td>0.8</td><td>0.8</td></tr>
+	<tr><td>IM Offset top/left (px)</td><td>184</td><td>0</td></tr>
+	<tr><td>CSS Offset (px)</td><td>150</td><td>100</td></tr>
+	<tr><td>CSS Offset before scaling (px)</td><td>-334</td><td>-100</td></tr>
+	<tr><td>CSS Offset after scaling (px)</td><td>-418</td><td>-125</td></tr>
+	</table>
+	
+	<p><img src="demo.png" width="80%" /></p>
+
+	<div><img src="hardcrop.png" /></div>
+	<p>Imagemagick Hardcrop <br/> 
+	magick nightwatch.jpg 80% -crop 400x400+184+0 nightwatch.out.png</p>
+	<div><img class="mx" src="original.jpg" /></div>
+	<p>CSS Softcrop per Matrix<br/> 
+	transform: matrix(0.8, 0, 0, 0.8, -334, -100);</p>
+	<div><img class="ts" src="original.jpg" /></div>
+	<p>CSS Softcrop in Reihenfolge translate/scale<br/>
+	transform: translate(-334px, -100px) scale(0.8, 0.8);</p>
+	<div><img class="st" src="original.jpg" /></div>
+	<p>CSS Softcrop in Reihenfolge scale/translate<br/> 
+	transform: scale(0.8, 0.8) translate(-418px, -125px);</p>
+</body>
+</html>
